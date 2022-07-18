@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>File Upload</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <section id="upload">
+      <div>
+        <p>Select a file:</p>
+        <p><input type="file" id="document" accept=".doc,.docx"></p>
+        <p>
+          <input type="button" id="submit" value="Submit" @click="run($event)">
+        </p>
+      </div>
+    </section>
+    <script src="{% static 'app/style/script.js' %}"></script>
+  </body>
+</html>
