@@ -30,6 +30,7 @@ const app = Vue.createApp({
         a.download = "word.docx";
         document.body.appendChild(a)
         a.click();
+        a.remove();
       })
       .catch(error => {
         console.error("Error:", error);
