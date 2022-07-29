@@ -15,10 +15,14 @@ def format(request):
   file = request.FILES['file']
 
   # TODO perform some document edits here
-  document = Document(file)
+  doc = Document(file)
+  
+  file_stream = io.BytesIO()
+  doc.save(file_stream)
+  file_stream.seek(0)
 
   response = StreamingHttpResponse(
-    streaming_content = FileWrapper(file),
+    streaming_content = file_stream,
     content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document'
   )
 
